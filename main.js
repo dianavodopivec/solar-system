@@ -43,6 +43,7 @@ gsap.ticker.lagSmoothing(0);
 //   duration: 4,
 // });
 
+//GSAP SCROLL
 gsap.registerPlugin(ScrollTrigger);
 
 let tl = gsap.timeline({
@@ -62,6 +63,7 @@ tl.to(".wrap-scroll", {
 
 gsap.ticker.lagSmoothing(0);
 
+//GSAP TITTLE
 gsap.to($title, {
   scrollTrigger: {
     trigger: ".container-planet",
@@ -100,6 +102,24 @@ gsap.to($star, {
   scale: 0.55,
   opacity: 0,
 });
+
+// GSAP NAV
+gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
+
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+  let st = window.pageYOffset || document.documentElement.scrollTop;
+  if (st > lastScrollTop) {
+    // Downscroll code
+    gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
+  } else {
+    // Upscroll code
+    gsap.to("nav", { duration: 0.5, opacity: 0, y: -30  });
+  }
+  lastScrollTop = st <= 0 ? 0 : st;
+}); 
+
 
 const getGeolocation = async () => {
   if (navigator.geolocation) {
