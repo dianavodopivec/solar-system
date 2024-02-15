@@ -1,0 +1,482 @@
+main {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #282537;
+    background-image: -webkit-radial-gradient(
+      bottom,
+      circle cover,
+      #101010 0%,
+      #0d0d0e 80%
+    );
+    background-image: -moz-radial-gradient(
+      bottom,
+      circle cover,
+      #282828 0%,
+      #0d0d0e 80%
+    );
+    background-image: -o-radial-gradient(
+      bottom,
+      circle cover,
+      #282828 0%,
+      #0d0d0e 80%
+    );
+    background-image: radial-gradient(bottom, circle cover, #282828 0%, #0d0d0e 80%);
+}
+
+
+/* THE SUN */
+
+/*.card-sun {
+    height: 400px;
+    width: 300px;
+    backdrop-filter: blur(30px);
+    border-radius: 30px;
+    animation: floatDown 1.5s ease-in-out infinite alternate;
+} */
+/* 
+.sun {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border: 1px solid #e96214a0;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-image: var(--sun-image);
+    box-shadow: #db590378 0px 30px 60px 20px, #f4880df3 0px 28px 36px -28px;
+    transform: var(--sun-tilt) scale(1.2);
+    animation: planetRotate calc(var(--sun-day) * 0.1s) linear infinite;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.shadow-sun {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    z-index: 1;
+    border-radius: 50%;
+    box-shadow: inset 10px 0px 12px -2px rgba(255, 255, 255, 0.2), inset -70px 0px 50px 0px #d8761383, -5px 0px 30px -4px #cc9f4c;
+}
+
+.light-sun {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    z-index: 1;
+    border-radius: 50%;
+    background: radial-gradient( circle at 40% 50%, rgba(252, 187, 153, 0.647) 0%, rgba(255, 255, 255, 0) 65% );
+} */
+
+/* MERCURY */
+
+.mercury {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border: 1px solid rgba(79, 78, 78, 0.733);
+    border-radius: 50%;
+    overflow: hidden;
+    filter: contrast(150%);
+    background-image: var(--mercury-image);
+    background-size: cover;
+    transform: var(--mercury-tilt) scale(1.2);
+    box-shadow: rgba(61, 59, 59, 0.469)0px 10px 30px 2px, rgba(110, 109, 108, 0.952) 0px 18px 36px -28px;
+    animation: planetRotate calc(var(--mercury-day) * 0.1s) linear infinite;
+}
+
+.shadow-mercury {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: inset 10px 0px 12px -2px rgb(0, 0, 0), inset -70px 0px 50px 0px #0c0c0cd2, -5px 0px 30px -4px rgb(36, 36, 36);
+}
+
+.light-mercury {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient( circle at 30% 50%, rgba(247, 247, 247, 0.657) 0%, rgba(255, 255, 255, 0) 65% );
+}
+
+/* VENUS */
+.venus {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: var(--venus-clouds-image);
+    background-size: cover;
+    box-shadow: inset -10px 0px 12px -2px #d1ae4c57, inset 70px 0px 50px 0px #0c0c0ce7, 5px 0px 40px -4px #a78c60;
+    transform: var(--venus-tilt) scale(1.2);
+    animation: planetRotate calc(var(--venus-day) * 0.1s) linear infinite;
+    -webkit-animation: planetRotate calc(var(--venus-day) * 0.1s) linear infinite;
+    transition: background-image 0.2s ease, box-shadow 0.5s ease;
+    -webkit-transition: background-image 0.2s ease, box-shadow 0.5s ease;
+    -moz-transition: background-image 0.2s ease, box-shadow 0.5s ease;
+    -ms-transition: background-image 0.2s ease, box-shadow 0.5s ease;
+    -o-transition: background-image 0.2s ease, box-shadow 0.5s ease;
+}
+
+.light-venus {
+    height: 70px;
+    width: 80px;
+    position: absolute;
+    left: 50px;
+    bottom: 240px;
+    filter: blur(30px);
+    background-color: #f4e4d0b8;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 1;
+    -webkit-filter: blur(30px);
+}
+
+.venus:hover {
+    background-image: var(--venus-image);
+    background-size: cover;    
+    box-shadow: inset -10px 0px 12px -2px #794228e9, inset 70px 0px 50px 0px #0c0c0cde, 5px 0px 40px -4px #ee7009d4;
+    transition: background-image 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* MARS */
+
+.mars {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border: 1px solid #8e3a3aa0;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: var(--mars-image);
+    background-size: cover;
+    transform: var(--mars-tilt) scale(1.2);
+    box-shadow: #33171689 0px 0px 10px 2px, #232323a7 0px 18px 36px -28px;
+    animation: planetRotate calc(var(--mars-day) * 0.1s) linear infinite;
+}
+
+.shadow-mars {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: inset 12px 0px 12px -2px rgba(66, 32, 23, 0.706), inset -70px 0px 50px 0px #0c0c0cf0, -5px 0px 30px -4px #342119;
+}
+
+.light-mars {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient( circle at 30% 50%, #c5c2c28e 0%, rgba(255, 255, 255, 0) 65% );
+}
+
+/* EARTH */
+
+.earth {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border: 1px solid rgba(68, 69, 69, 0.843);
+    border-radius: 50%;
+    overflow: hidden;
+    filter: brightness(150%);
+    background-image: var(--earth-image);
+    background-size: cover;
+    transform: var(--earth-tilt) scale(1.2);
+    box-shadow: #3c434389 0px 0px 40px 2px, #232323a7 0px 18px 80px -28px;
+    animation: planetRotate calc(var(--earth-day) * 0.1s) linear infinite;
+    -webkit-animation: planetRotate calc(var(--earth-day) * 0.1s) linear infinite;
+    -webkit-filter: brightness(150%);
+}
+
+.shadow-earth {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: inset 15px 0px 20px -2px rgb(24, 24, 28), inset -70px 0px 50px 0px #0d0d12, -5px 0px 30px -4px rgb(12, 32, 40);
+}
+
+.light-earth {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient( circle at 30% 50%, #e0dddd8e 0%, rgba(255, 255, 255, 0) 65% );
+}
+
+/* JUPITER */
+
+.jupiter {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border: 1px solid rgba(69, 69, 68, 0.843);
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: var(--jupiter-image);
+    background-size: cover;
+    transform: var(--jupiter-tilt) scale(1.2);
+    box-shadow: #ad958044 0px 0px 40px 2px, #151414a7 0px 18px 80px -28px;
+    animation: planetRotate calc(var(--jupiter-day) * 0.1s) linear infinite;
+}
+
+.shadow-jupiter {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: inset 10px 0px 12px -2px #ad958087, inset -70px 0px 50px 0px #13100df5, -5px 0px 30px -4px #333231;
+}
+
+.light-jupiter {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient( circle at 30% 50%, #d5d0d08e 0%, rgba(255, 255, 255, 0) 65% );
+}
+
+/* SATURN */
+
+.saturn-top {
+    height: 190px;
+    width: 190px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    z-index: 1;
+    overflow: hidden;
+    background-image: var(--saturn-image);
+    background-size: cover;
+    animation: planetRotate calc(var(--saturn-day) * 0.1s) linear infinite;
+    box-shadow: inset 10px 0px 12px -2px #ad958087, inset -70px 0px 50px 0px #13100dec;
+    clip-path: polygon(0 0, 100% 0, 100% 57%, 0% 50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transform: var(--saturn-tilt) scale(1.2);
+    -webkit-transform: var(--saturn-tilt) scale(1.2);
+    -moz-transform: var(--saturn-tilt) scale(1.2);
+    -ms-transform: var(--saturn-tilt) scale(1.2);
+    -o-transform: var(--saturn-tilt) scale(1.2);
+    -webkit-animation: planetRotate calc(var(--saturn-day) * 0.1s) linear infinite;
+}
+
+.saturn-rings {
+    height: 37px;
+    width: 500px;
+    position: relative;
+    top: 32%;
+    left: 49%;
+    transform: translate(-50%, -50%) rotateZ(31deg);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(24,19,25,0) 0%,rgba(53,52,51,0) 34%,rgba(55,54,52,1) 36%,rgba(56,55,53,1) 37%,rgba(68,67,66,1) 38%,rgba(56,55,53,1) 39%,rgba(68,67,66,1) 40%,rgba(56,55,53,1) 41%,rgba(87,77,76,1) 42%,rgba(87,77,76,1) 44%,rgba(113,110,103,1) 46%,rgba(113,110,103,1) 48%,rgba(113,98,93,1) 49%,rgba(113,98,93,1) 51%,rgba(122,115,105,1) 52%,rgba(113,98,93,1) 53%,rgba(113,98,93,1) 54%,rgba(122,115,105,1) 55%,rgba(106,99,89,1) 56%,rgba(106,99,89,1) 58%,rgba(79,76,76,0) 60%,rgba(65,64,70,1) 61%,rgba(65,64,70,1) 62%,rgba(90,85,89,1) 63%,rgba(78,74,73,1) 65%,rgba(78,73,74,1) 67%,rgba(78,73,74,0) 68%,rgba(78,73,75,1) 69%,rgba(78,73,75,1) 70%,rgba(78,73,76,0) 71%,rgba(77,72,76,0) 72%,rgba(24,19,25,0) 100%);
+    -webkit-transform: translate(-50%, -50%) rotateZ(31deg);
+    -moz-transform: translate(-50%, -50%) rotateZ(31deg);
+    -ms-transform: translate(-50%, -50%) rotateZ(31deg);
+    -o-transform: translate(-50%, -50%) rotateZ(31deg);
+} 
+
+.saturn-bottom {
+    height: 190px;
+    width: 190px;
+    position: absolute;
+    top: 30px;
+    z-index: -1;
+    left: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: var(--saturn-image);
+    background-size: cover;
+    transform: var(--saturn-tilt) scale(1.2);
+    animation: planetRotate calc(var(--saturn-day) * 0.1s) linear infinite;
+    box-shadow: inset 10px 0px 12px -2px #ad958087, inset -70px 0px 30px 0px #13100ded;
+    clip-path: polygon(0 47%, 100% 59%, 100% 100%, 0% 100%);
+}
+
+.light-saturn {
+    height: 280px;
+    width: 280px;
+    position: absolute;
+    top: -9px;
+    left: 40px;
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: -2;
+    background: radial-gradient( circle at 30% 50%, #dcb8b832 0%, rgba(255, 255, 255, 0) 65% );
+}
+
+/* URANUS */
+
+.uranus {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border: 1px solid rgba(66, 111, 110, 0.843);
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: var(--uranus-image);
+    background-size: cover;
+    transform: var(--uranus-tilt) scale(1.2);
+    box-shadow: #40716944 0px 0px 40px 2px, #151414a7 0px 18px 80px -28px;
+    animation: planetRotate calc(var(--uranus-day) * 0.1s) linear infinite;
+}
+
+.shadow-uranus {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: inset 10px 0px 12px -2px #61a3a987, inset -50px 0px 50px 0px rgba(12, 11, 10, 0.949), -5px 0px 30px -4px #51918e47;
+}
+
+.light-uranus {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient( circle at 30% 50%, #e7e0e08e 0%, rgba(255, 255, 255, 0) 65% );
+}
+
+/* NEPTUNE */
+
+.neptune {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border: 1px solid rgba(70, 66, 111, 0.843);
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: var(--neptune-image);
+    background-size: cover;
+    transform: var(--neptune-tilt) scale(1.2);
+    box-shadow: #44407144 0px 0px 40px 2px, #151414a7 0px 18px 80px -28px;
+    animation: planetRotate calc(var(--neptune-day) * 0.1s) linear infinite;
+}
+
+.shadow-neptune {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: inset 10px 0px 12px -2px #6961a987, inset -50px 0px 50px 0px #0a0a0cf8, -5px 0px 30px -4px #2f3477ae;
+}
+
+.light-neptune {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient( circle at 30% 50%, #ece9e99e 0%, rgba(255, 255, 255, 0) 65% );
+}
+
+/* PLUTO */
+
+.pluto {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    border: 1px solid rgba(67, 46, 35, 0.843);
+    border-radius: 50%;
+    overflow: hidden;
+    background-image: var(--pluto-image);
+    background-size: cover;
+    transform: var(--pluto-tilt) scale(1.2);
+    box-shadow: #39171544 0px 0px 40px 2px, #312e2ea7 0px 18px 80px -28px;
+    animation: planetRotate calc(var(--pluto-day) * 0.1s) linear infinite;
+}
+
+.shadow-pluto {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: inset 10px 0px 12px -2px #2b1a0cba, inset -70px 0px 50px 0px #13100df7, -5px 0px 30px -4px #170f08;
+}
+
+.light-pluto {
+    height: 240px;
+    width: 240px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient( circle at 30% 50%, #ece9e95d 0%, rgba(255, 255, 255, 0) 65% );
+}

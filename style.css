@@ -1,0 +1,269 @@
+@import "./assets/css/header.css";
+@import "./assets/css/sections.css";
+@import "./assets/css/planets.css";
+@import "./assets/css/main.css";
+@import "./assets/css/stars.css";
+@import "./assets/css/clock.css";
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --color-sun: var(#ce6a3b94);
+  --color-sun-light: var(#cc9f4c);
+  --color-mercury: var(#8a8a8a);
+  --color-venus: var(#b46b17);
+  --color-venus-clouds: var(#e8cda2);
+  --color-mars: var(#ad6751);
+  --color-earth-day: var(#89a7ef);
+  --color-earth-night: var(#5b6783);
+  --color-jupiter: var(#ad9580);
+  --color-saturn: var(#d9ccaf);
+  --color-uranus: var(#a8c9d2);
+  --color-neptune: var(#4d63ac);
+  --color-pluto: var(#a99786);
+
+  --sun-image: url("/assets/images/sun-star.jpg");
+  --sun-tilt: rotate(0deg);
+  --sun-day: 600;
+
+  --mercury-image: url("/assets/images/mercury-planet.jpg");
+  --mercury-tilt: rotate(0.034deg);
+  --mercury-day: 1407.6;
+
+  --venus-image: url("/assets/images/venus-planet.jpg");
+  --venus-clouds-image: url("/assets/images/venus-clouds-planet.jpg");
+  --venus-tilt: rotate(177.3deg);
+  --venus-day: 5832.5;
+
+  --mars-image: url("/assets/images/mars-planet.jpg");
+  --mars-tilt: rotate(25.2deg);
+  --mars-day: 24.6;
+
+  --earth-image: url("/assets/images/earth-planet.jpeg");
+  --earth-night-image: url("/assets/images/earth-planet-night.jpg");
+  --earth-tilt: rotate(23.26deg);
+  --earth-day: 23.9;
+
+  --jupiter-image: url("/assets/images/jupiter-planet.jpg");
+  --jupiter-tilt: rotate(3.1deg);
+  --jupiter-day: 9.9;
+
+  --saturn-image: url("/assets/images/saturn-planet.jpg");
+  --saturn-tilt: rotate(26.7deg);
+  --saturn-day: 10.7;
+
+  --uranus-image: url("/assets/images/uranus-planet.jpg");
+  --uranus-tilt: rotate(97.8deg);
+  --uranus-day: 17.2;
+
+  --neptune-image: url("/assets/images/neptune-planet.jpg");
+  --neptune-tilt: rotate(28.3deg);
+  --neptune-day: 16.1;
+
+  --pluto-image: url("/assets/images/pluto-planet.jpg");
+  --pluto-tilt: rotate(122.5deg);
+  --pluto-day: 153.3;
+}
+
+/* CSS SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 7px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #151414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #393939;
+  transition: background 0.3s ease-in-out;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #919191;
+}
+
+h1 {
+  font-size: 120px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -6px;
+  color: rgb(16, 15, 15);
+  text-shadow: rgb(116, 115, 115) 0px 1px 2px;
+  -webkit-text-stroke: 2px rgb(106, 106, 106);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h2 {
+  font-size: 75px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 5px;
+  color: rgb(16, 15, 15);
+  text-shadow: rgb(116, 115, 115) 0px 1px 2px;
+  -webkit-text-stroke: 2px #6a6a6a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h3 {
+  font-size: 75px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 5px;
+  color: #faf3f3;
+}
+
+p {
+  z-index: 1;
+  font-size: 30px;
+  font-weight: 250;
+  letter-spacing: 1.5px;
+  color: #6a6a6a;
+}
+
+.eight-planets,
+.five-dwarf {
+  font-size: 50px;
+  font-weight: 600;
+  color: #ffff;
+}
+
+.container-planets {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.noise {
+  height: 200%;
+  width: 200%;
+  position: fixed;
+  left: -50%;
+  top: -50%;
+  opacity: 0.12;
+  z-index: 1;
+  background: url(/assets/images/noise.png);
+  pointer-events: none;
+  will-change: auto;
+  animation: noise 0.2s ease-in-out infinite both;
+}
+
+@keyframes planetRotate {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes noise {
+  0% {
+    transform: translate3d(1%, -1%, 0);
+  }
+  10% {
+    transform: translate3d(-5%, -2%, 0);
+  }
+
+  20% {
+    transform: translate3d(10%, 5%, 0);
+  }
+
+  30% {
+    transform: translate3d(5%, -11%, 0);
+  }
+
+  40% {
+    transform: translate3d(-12%, -5%, 0);
+  }
+
+  50% {
+    transform: translate3d(10%, 9%, 0);
+  }
+
+  60% {
+    transform: translate3d(15%, 0, 0);
+  }
+
+  70% {
+    transform: translate3d(-10%, 8%, 0);
+  }
+
+  80% {
+    transform: translate3d(10%, 2%, 0);
+  }
+
+  90% {
+    transform: translate3d(1%, 5%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 8%, 0);
+  }
+}
+
+/*  GSAP FLEX  */
+
+.section-scroll {
+  height: 400vh;
+}
+
+.wrap-scroll,
+.d_scroll {
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrap-scroll {
+  width: 400vw;
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.d_scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Para que todas las secciones que no tengan dicha clase, sean contenedores de flexbox con su contenido centrado tanto horizontal vertical*/
+.d_scroll,
+section:not(.section-scroll) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
