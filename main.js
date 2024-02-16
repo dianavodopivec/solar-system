@@ -1,27 +1,19 @@
 import { clockFuncionality } from "./assets/scripts/clock.js";
-const $geolocationContainer = document.getElementById("geolocation-info");
-const $title = document.querySelector("h1");
-const $title2 = document.querySelector("h2");
-const $star = document.querySelector(".button-play");
-const $containerInfo = document.querySelector(".container-info");
+import { getGeolocation } from "./assets/scripts/geolocation.js";
 /*import { earthChanges 
 } from "./assets/scripts/earthChanges.js";*/
 
 //To execute js code that interacts with the DOM
-document.addEventListener("DOMContentLoaded", e => {
+document.addEventListener("DOMContentLoaded", (e) => {
   clockFuncionality();
+  getGeolocation();
   //earthChanges();
 });
 
-const lenis = new Lenis();
-
-lenis.on("scroll", ScrollTrigger.update);
-
-gsap.ticker.add(time => {
-  lenis.raf(time * 350);
-});
-
-gsap.ticker.lagSmoothing(0);
+const $title = document.querySelector("h1");
+const $title2 = document.querySelector("h2");
+const $star = document.querySelector(".button-play");
+const $containerInfo = document.querySelector(".container-info");
 
 //---------- GSAP TESTING ----------//
 
@@ -59,6 +51,18 @@ tl.to(".wrap-scroll", {
   x: "-300vw",
   ease: "none",
   duration: 2,
+});
+
+gsap.ticker.lagSmoothing(0);
+
+
+//GSAP + LENIS
+const lenis = new Lenis();
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 350);
 });
 
 gsap.ticker.lagSmoothing(0);
@@ -105,50 +109,3 @@ gsap.to($star, {
 
 // GSAP NAV
 gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
-
-let lastScrollTop = 0;
-
-window.addEventListener("scroll", function() {
-  let st = window.pageYOffset || document.documentElement.scrollTop;
-  if (st > lastScrollTop) {
-    // Downscroll code
-    gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
-  } else {
-    // Upscroll code
-    gsap.to("nav", { duration: 0.5, opacity: 0, y: -30  });
-  }
-  lastScrollTop = st <= 0 ? 0 : st;
-}); 
-
-
-const getGeolocation = async () => {
-  if (navigator.geolocation) {
-    try {
-      const position = await new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(resolve, reject);
-      });
-
-      const { latitude, longitude } = position.coords;
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
-      );
-
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      const data = await response.json();
-      const country = data.address.country;
-      const state = data.address.state;
-
-      console.log(data.address);
-      const formattedCountry = country.toUpperCase().slice(0, 3);
-      $geolocationContainer.innerText = `${formattedCountry} ${state}`;
-    } catch (error) {
-      console.error(error.message);
-    }
-  } else {
-    $geolocationContainer.innerText = "geolocation locked";
-  }
-};
-
-getGeolocation();
