@@ -1,5 +1,6 @@
 import { clockFuncionality } from "./assets/scripts/clock.js";
 import { getGeolocation } from "./assets/scripts/geolocation.js";
+import { addAnimation } from "./assets/scripts/scroller-planet.js";
 /*import { earthChanges 
 } from "./assets/scripts/earthChanges.js";*/
 
@@ -7,6 +8,7 @@ import { getGeolocation } from "./assets/scripts/geolocation.js";
 document.addEventListener("DOMContentLoaded", (e) => {
   clockFuncionality();
   getGeolocation();
+  addAnimation()
   //earthChanges();
 });
 
@@ -110,5 +112,3 @@ gsap.to($star, {
 
 // GSAP NAV
 gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
-
-

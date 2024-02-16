@@ -1,0 +1,64 @@
+/* TAG LIST + SCROLLER CSS */
+
+.kilometers {
+    height: 2px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    position: absolute;
+    top: 180px;
+    list-style: none;
+    background-color: aliceblue;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    z-index: 2;
+} 
+
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.scroller {
+  z-index: 2;
+}
+
+.scroller-inner {
+  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  mask: linear-gradient(90deg, transparent, white 20%, white 90%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller-inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll 40s linear infinite;
+  -webkit-animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
