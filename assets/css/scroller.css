@@ -1,15 +1,14 @@
 /* TAG LIST + SCROLLER CSS */
 
-.kilometers {
+.size {
     height: 2px;
-    width: 400px;
+    width: 390px;
     display: flex;
     align-items: center;
     justify-content: center ;
     position: absolute;
     top: 180px;
-    list-style: none;
-    background-color: aliceblue;
+    background-color: transparent;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -27,6 +26,7 @@
 .tag-list li {
   font-size: 30px;
   font-weight: 600;
+  color: #ffffff;
   padding: 1rem;
   display: flex;
   align-items: center;

@@ -112,3 +112,5 @@ gsap.to($star, {
 
 // GSAP NAV
 gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
+
+

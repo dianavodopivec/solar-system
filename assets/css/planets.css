@@ -34,7 +34,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  border: 1px solid #3c3c3c3e;
+  /* border: 1px solid #3c3c3c3e; */
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
