@@ -10,32 +10,33 @@ document.addEventListener("DOMContentLoaded", (e) => {
   //earthChanges();
 });
 
+//---------- GSAP ANIMATIONS ----------//
+
 const $title = document.querySelector("h1");
 const $title2 = document.querySelector("h2");
 const $star = document.querySelector(".button-play");
 const $containerInfo = document.querySelector(".container-info");
 
-//---------- GSAP TESTING ----------//
+/*const $sun = document.getElementById("sun");
+console.log($sun)
 
-// const $sun = document.getElementById("sun");
-// console.log($sun)
+gsap.set($sun.children, { opacity: 1, y: 500, rotation: 0 });
 
-// gsap.set($sun.children, { opacity: 1, y: 500, rotation: 0 });
+gsap.to($sun.children, {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".container-planets",
+    start: "top center",
+    toggleActions: "restart pause pause pause",
+    scrub: true,
+  },
+  y: 0,
+  rotation: 0,
+  duration: 4,
+});*/
 
-// gsap.to($sun.children, {
-//   opacity: 1,
-//   scrollTrigger: {
-//     trigger: ".container-planets",
-//     start: "top center",
-//     toggleActions: "restart pause pause pause",
-//     scrub: true,
-//   },
-//   y: 0,
-//   rotation: 0,
-//   duration: 4,
-// });
 
-//GSAP SCROLL
+//GSAP HORIZONTAL SCROLL
 gsap.registerPlugin(ScrollTrigger);
 
 let tl = gsap.timeline({
@@ -109,3 +110,5 @@ gsap.to($star, {
 
 // GSAP NAV
 gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
+
+
