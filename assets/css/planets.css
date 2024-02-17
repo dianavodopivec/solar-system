@@ -34,7 +34,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  /* border: 1px solid #3c3c3c3e; */
+  border: 1px solid #3c3c3c3e;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -54,6 +54,8 @@
   animation: floatDown 1.5s ease-in-out infinite alternate;
   -webkit-animation: floatDown 1.5s ease-in-out infinite alternate;
 }
+
+/* THE SUN */
 
 .sun {
   height: 300px;
@@ -101,4 +103,18 @@
     rgba(252, 187, 153, 0.647) 0%,
     rgba(255, 255, 255, 0) 65%
   );
+}
+
+.container-1 {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  bottom: 30px;
+  right: 35px;
+  border: 1px solid rgba(84, 84, 84, 0.34);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }

@@ -17,26 +17,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
 const $title = document.querySelector("h1");
 const $title2 = document.querySelector("h2");
 const $star = document.querySelector(".button-play");
-const $containerInfo = document.querySelector(".container-info");
-
-/*const $sun = document.getElementById("sun");
-console.log($sun)
-
-gsap.set($sun.children, { opacity: 1, y: 500, rotation: 0 });
-
-gsap.to($sun.children, {
-  opacity: 1,
-  scrollTrigger: {
-    trigger: ".container-planets",
-    start: "top center",
-    toggleActions: "restart pause pause pause",
-    scrub: true,
-  },
-  y: 0,
-  rotation: 0,
-  duration: 4,
-});*/
-
+const $containerInfo = document.querySelector(".container-1");
+console.log($containerInfo)
 
 //GSAP HORIZONTAL SCROLL
 gsap.registerPlugin(ScrollTrigger);
@@ -57,7 +39,6 @@ tl.to(".wrap-scroll", {
 });
 
 gsap.ticker.lagSmoothing(0);
-
 
 //GSAP + LENIS
 const lenis = new Lenis();
@@ -110,7 +91,34 @@ gsap.to($star, {
   opacity: 0,
 });
 
+//GSAP PLANETS 
+const $sun = document.querySelector(".card");
+let sunAppeared = false;
+
+gsap.set($sun.children, { opacity: 0, y: 100, rotation: 0 });
+gsap.to($sun.children, {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".container-planet",
+    start: "top center",
+    end: "+=300", 
+    onEnter: () => {
+      if (!sunAppeared) {
+        sunAppeared = true;
+        gsap.to($sun.children, { opacity: 1, y: 0, rotation: 0 });
+      }
+    },
+    onLeaveBack: () => {
+      sunAppeared = false;
+    },
+    toggleActions: "restart pause pause pause",
+    scrub: true,
+  },
+  y: 0,
+  rotation: 0,
+  duration: 4,
+});
+
+
 // GSAP NAV
 gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
-
-
