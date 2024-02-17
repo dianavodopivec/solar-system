@@ -117,10 +117,27 @@ gsap.to($sun.children, {
   duration: 4,
 });
 
+//GSAP PLANETS-NAME
+const $planetName = document.querySelector(".h3-names")
+console.log($planetName)
+gsap.set($planetName, {opacity: 0, x: 0, y: 80})
+gsap.to($planetName, {
+  opacity: 1,
+  x: 0,
+  y: 0,
+  scrollTrigger: {
+    trigger: ".container-planet",
+    start: "top center+=200", 
+    toggleActions: "restart pause pause pause",
+    scrub: true,
+  },
+  duration: 1, 
+})
+
 //GSAP PLANETS-INFO
 const $planetInfo = document.querySelector(".container-info-1");
 const $planetInfo2 = document.querySelector(".container-info-2");
-gsap.set($planetInfo, { opacity: 0, x: 0, y: 80 });
+gsap.set($planetInfo, {opacity: 0, x: 0, y: 80});
 gsap.to($planetInfo, {
   opacity: 1,
   x: 0,
@@ -134,7 +151,7 @@ gsap.to($planetInfo, {
   duration: 1, 
 });
 
-gsap.set($planetInfo2, { opacity: 0, x: 0, y: -80 });
+gsap.set($planetInfo2, {opacity: 0, x: 0, y: -80 });
 gsap.to($planetInfo2, {
   opacity: 1,
   x: 0,
@@ -149,4 +166,4 @@ gsap.to($planetInfo2, {
 });
 
 // GSAP NAV
-gsap.to("nav", { duration: 0.5, opacity: 1, y: 0 });
+gsap.to("nav", {duration: 0.5, opacity: 1, y: 0 });

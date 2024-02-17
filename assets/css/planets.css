@@ -34,7 +34,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  border: 1px solid #3c3c3c3e;
+  /* border: 1px solid #3c3c3c3e; */
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -53,6 +53,12 @@
   align-items: center;
   animation: floatDown 1.5s ease-in-out infinite alternate;
   -webkit-animation: floatDown 1.5s ease-in-out infinite alternate;
+}
+
+.h3-names {
+  position: absolute;
+  top: 30px;
+  left: 50px;
 }
 
 /* THE SUN */

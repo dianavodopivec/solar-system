@@ -31,5 +31,5 @@ const getGeolocation = async () => {
 };
   
 export {
-    getGeolocation
+  getGeolocation
 }
