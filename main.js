@@ -127,7 +127,8 @@ gsap.to($planetName, {
   y: 0,
   scrollTrigger: {
     trigger: ".container-planet",
-    start: "top center+=200", 
+    start: "top center", 
+    end: "+=200",
     toggleActions: "restart pause pause pause",
     scrub: true,
   },
@@ -144,7 +145,8 @@ gsap.to($planetInfo, {
   y: 0,
   scrollTrigger: {
     trigger: ".container-planet",
-    start: "top center+=100", 
+    start: "top center", 
+    end: "+=300",
     toggleActions: "restart pause pause pause",
     scrub: true,
   },
@@ -158,7 +160,8 @@ gsap.to($planetInfo2, {
   y: 0,
   scrollTrigger: {
     trigger: ".container-planet",
-    start: "top center+=100", 
+    start: "top center", 
+    end: "+=100",
     toggleActions: "restart pause pause pause",
     scrub: true,
   },
