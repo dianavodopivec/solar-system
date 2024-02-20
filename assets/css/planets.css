@@ -20,12 +20,6 @@
   background-image: radial-gradient(top, circle cover, #282828 0%, #0d0d0e 80%);
 }
 
-.testing {
-  width: 300px;
-  height: 300px;
-  background-color: #ddc28f;
-}
-
 .container-planet {
   height: 80vh;
   width: 1200px;
@@ -151,4 +145,137 @@
   );
 }
 
+/* MERCURY */  
 
+.mercury {
+  height: 230px;
+  width: 230px;
+  position: absolute;
+  top: 70px;
+  left: 80px;
+  border: 1px solid rgba(79, 78, 78, 0.733);
+  border-radius: 50%;
+  overflow: hidden;
+  filter: contrast(150%);
+  background-image: var(--mercury-image);
+  background-size: cover;
+  transform: var(--mercury-tilt) scale(1.2);
+  box-shadow: rgba(61, 59, 59, 0.469)0px 10px 30px 2px, rgba(110, 109, 108, 0.952) 0px 18px 36px -28px;
+  animation: planetRotate calc(var(--mercury-day) * 0.1s) linear infinite;
+}
+
+.shadow-mercury {
+  height: 276px;
+  width: 276px;
+  position: absolute;
+  top: 47px;
+  left: 57px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: inset 10px 0px 12px -2px rgb(0, 0, 0), inset -70px 0px 50px 0px #0c0c0cd2, -5px 0px 30px -4px rgb(36, 36, 36);
+}
+
+.light-mercury {
+  height: 276px;
+  width: 276px;
+  position: absolute;
+  top: 47px;
+  left: 57px;
+  border-radius: 50%;
+  z-index: 1;
+  background: radial-gradient( circle at 30% 50%, rgba(247, 247, 247, 0.657) 0%, rgba(255, 255, 255, 0) 65% );
+}
+
+/* VENUS */  
+
+.venus {
+  height: 260px;
+  width: 260px;
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: var(--venus-clouds-image);
+  background-size: cover;
+  box-shadow: inset -10px 0px 12px -2px #d1ae4c57, inset 70px 0px 50px 0px #0c0c0ce7, 5px 0px 40px -4px #a78c60;
+  transform: var(--venus-tilt) scale(1.2);
+  animation: planetRotate calc(var(--venus-day) * 0.1s) linear infinite;
+  -webkit-animation: planetRotate calc(var(--venus-day) * 0.1s) linear infinite;
+  transition: background-image 0.2s ease, box-shadow 0.5s ease;
+  -webkit-transition: background-image 0.2s ease, box-shadow 0.5s ease;
+  -moz-transition: background-image 0.2s ease, box-shadow 0.5s ease;
+  -ms-transition: background-image 0.2s ease, box-shadow 0.5s ease;
+  -o-transition: background-image 0.2s ease, box-shadow 0.5s ease;
+}
+
+.light-venus {
+  height: 70px;
+  width: 80px;
+  position: absolute;
+  left: 50px;
+  bottom: 170px;
+  filter: blur(30px);
+  background-color: #f4e4d0b8;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 1;
+  -webkit-filter: blur(30px);
+}
+
+.venus:hover {
+  background-image: var(--venus-image);
+  background-size: cover;    
+  box-shadow: inset -10px 0px 12px -2px #794228e9, inset 70px 0px 50px 0px #0c0c0cde, 5px 0px 40px -4px #ee7009d4;
+  transition: background-image 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* EARTH */  
+
+.earth {
+  height: 245px;
+  width: 245px;
+  position: absolute;
+  top: 60px;
+  right: 25px;
+  border: 1px solid rgba(68, 69, 69, 0.843);
+  border-radius: 50%;
+  overflow: hidden;
+  filter: brightness(150%);
+  background-image: var(--earth-image);
+  background-size: cover;
+  transform: var(--earth-tilt) scale(1.2);
+  box-shadow: #3c434389 0px 0px 40px 2px, #232323a7 0px 18px 80px -28px;
+  animation: planetRotate calc(var(--earth-day) * 0.1s) linear infinite;
+  -webkit-animation: planetRotate calc(var(--earth-day) * 0.1s) linear infinite;
+  -webkit-filter: brightness(150%);
+}
+
+.shadow-earth {
+  height: 295px;
+  width: 295px;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: inset 15px 0px 20px -2px rgb(24, 24, 28), inset -70px 0px 50px 0px #0d0d12, -5px 0px 30px -4px rgb(12, 32, 40);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.light-earth {
+  height: 295px;
+  width: 295px;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  border-radius: 50%;
+  z-index: 1;
+  background: radial-gradient( circle at 30% 50%, #e0dddd8e 0%, rgba(255, 255, 255, 0) 65% );
+}

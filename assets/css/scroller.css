@@ -1,6 +1,64 @@
 /* TAG LIST + SCROLLER CSS */
+.small-size {
+  height: 2px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  position: absolute;
+  bottom: 200px;
+  left: 44px;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  user-select: none;
+  z-index: 2;
+}
 
-.size {
+.medium-size {
+  height: 2px;
+  width: 333px;
+  display: flex;
+  background-color: aqua;
+  align-items: center;
+  justify-content: center ;
+  position: absolute;
+  bottom: 200px;
+  left: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  user-select: none;
+  z-index: 2;
+}
+
+.medium-size-e {
+  height: 2px;
+  width: 320px;
+  display: flex;
+  background-color: aqua;
+  align-items: center;
+  justify-content: center ;
+  position: absolute;
+  bottom: 215px;
+  left: 85px;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  user-select: none;
+  z-index: 2;
+}
+
+.big-size {
     height: 2px;
     width: 390px;
     display: flex;
@@ -14,6 +72,7 @@
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+    user-select: none;
     z-index: 2;
 } 
 

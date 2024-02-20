@@ -47,7 +47,7 @@ gsap.ticker.lagSmoothing(0);
 //GSAP TITTLE
 const $title = document.querySelector("h1");
 const $title2 = document.querySelector("h2");
-const $star = document.querySelector("button-play")
+const $star = document.querySelector(".button-play")
 
 gsap.to($title, {
   scrollTrigger: {
@@ -117,7 +117,7 @@ gsap.to($sun.children, {
 });
 
 //GSAP PLANETS-NAME
-const $planetName = document.querySelector(".h3-names")
+const $planetName = document.querySelectorAll(".h3-names")
 gsap.set($planetName, {opacity: 0, x: 0, y: 80})
 gsap.to($planetName, {
   opacity: 1,

@@ -255,6 +255,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 /* Para que todas las secciones que no tengan dicha clase, sean contenedores de flexbox con su contenido centrado tanto horizontal vertical*/

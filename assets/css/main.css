@@ -82,7 +82,7 @@ main {
 
 /* MERCURY */
 
-.mercury {
+/* .mercury {
     height: 200px;
     width: 200px;
     position: absolute;
@@ -119,10 +119,10 @@ main {
     border-radius: 50%;
     z-index: 1;
     background: radial-gradient( circle at 30% 50%, rgba(247, 247, 247, 0.657) 0%, rgba(255, 255, 255, 0) 65% );
-}
+} */
 
 /* VENUS */
-.venus {
+/* .venus {
     height: 200px;
     width: 200px;
     position: absolute;
@@ -165,7 +165,7 @@ main {
     background-size: cover;    
     box-shadow: inset -10px 0px 12px -2px #794228e9, inset 70px 0px 50px 0px #0c0c0cde, 5px 0px 40px -4px #ee7009d4;
     transition: background-image 0.5s ease, box-shadow 0.5s ease;
-}
+} */
 
 /* MARS */
 
@@ -209,7 +209,7 @@ main {
 
 /* EARTH */
 
-.earth {
+/* .earth {
     height: 200px;
     width: 200px;
     position: absolute;
@@ -248,7 +248,7 @@ main {
     border-radius: 50%;
     z-index: 1;
     background: radial-gradient( circle at 30% 50%, #e0dddd8e 0%, rgba(255, 255, 255, 0) 65% );
-}
+} */
 
 /* JUPITER */
 
