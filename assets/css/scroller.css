@@ -40,14 +40,52 @@
 
 .medium-size-e {
   height: 2px;
-  width: 320px;
+  width: 313px;
   display: flex;
   background-color: aqua;
   align-items: center;
   justify-content: center ;
   position: absolute;
   bottom: 215px;
-  left: 85px;
+  left: 95px;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  user-select: none;
+  z-index: 2;
+}
+
+.medium-size-m {
+  height: 2px;
+  width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  position: absolute;
+  bottom: 200px;
+  left: 95px;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  user-select: none;
+  z-index: 2;
+}
+
+.medium-size-s {
+  height: 2px;
+  width: 335px;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  position: absolute;
+  bottom: 230px;
+  left: 15px;
   background-color: transparent;
   border-radius: 50%;
   -webkit-border-radius: 50%;

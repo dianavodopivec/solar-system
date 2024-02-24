@@ -1,4 +1,7 @@
 section {
   height: 100vh;
-  background: #282537;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  background-color: #0d0d0e;
 }

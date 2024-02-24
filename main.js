@@ -16,22 +16,24 @@ document.addEventListener("DOMContentLoaded", (e) => {
 //GSAP HORIZONTAL SCROLL
 gsap.registerPlugin(ScrollTrigger);
 
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".section-scroll",
-    start: "top top",
-    end: "bottom bottom",
-    scrub: 0,
-  },
-});
-
-tl.to(".wrap-scroll", {
-  x: "-300vw",
-  ease: "none",
-  duration: 2,
+document.querySelectorAll('.section-scroll').forEach((section) => {
+    const timeLine = gsap.timeline({
+        scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0,
+        },
+    });
+    timeLine.to(section.querySelector(".wrap-scroll"), {
+        x: "-300vw",
+        ease: "none",
+        duration: 2,
+    });
 });
 
 gsap.ticker.lagSmoothing(0);
+
 
 //GSAP + LENIS
 const lenis = new Lenis();
