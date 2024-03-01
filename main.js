@@ -90,25 +90,26 @@ gsap.to($star, {
   opacity: 0,
 });
 
-//GSAP PLANETS 
-const $sun = document.querySelector(".card");
-let sunAppeared = false;
 
-gsap.set($sun.children, { opacity: 0, y: -100, rotation: 0 });
-gsap.to($sun.children, {
+//GSAP PLANETS 
+const $allPlanets = document.querySelector(".card");
+let planetAppeared = false;
+
+gsap.set($allPlanets.children, { opacity: 0, y: -100, rotation: 0 });
+gsap.to($allPlanets.children, {
   opacity: 1,
   scrollTrigger: {
     trigger: ".container-planet",
     start: "top center",
     end: "+=300", 
     onEnter: () => {
-      if (!sunAppeared) {
-        sunAppeared = true;
-        gsap.to($sun.children, { opacity: 1, y: 0, rotation: 0 });
+      if (!planetAppeared) {
+        planetAppeared = true;
+        gsap.to($allPlanets.children, { opacity: 1, y: 0, rotation: 0 });
       }
     },
     onLeaveBack: () => {
-      sunAppeared = false;
+      planetAppeared = false;
     },
     toggleActions: "restart pause pause pause",
     scrub: true,
@@ -143,47 +144,15 @@ gsap.to($planetP, {
   opacity: 1,
   x: 0,
   y: 0,
+  duration: 1, 
+  ease: "power1.out",
   scrollTrigger: {
     trigger: ".info-p",
-    start: "top center",
+    start: "top bottom",
     end: "+=300",
-    toggleActions: "restart pause pause pause"
+    toggleActions: "restart pause pause pause",
+    scrub: true
   }
 })
 
-//GSAP PLANETS-INFO
-const $planetInfo = document.querySelector(".container-info-1");
-const $planetInfo2 = document.querySelector(".container-info-2");
-gsap.set($planetInfo, {opacity: 0, x: 0, y: 80});
-gsap.to($planetInfo, {
-  opacity: 1,
-  x: 0,
-  y: 0,
-  scrollTrigger: {
-    trigger: ".container-planet",
-    start: "top center", 
-    end: "+=300",
-    toggleActions: "restart pause pause pause",
-    scrub: true,
-  },
-  duration: 1, 
-});
 
-gsap.set($planetInfo2, {opacity: 0, x: 0, y: -80 });
-gsap.to($planetInfo2, {
-  opacity: 1,
-  x: 0,
-  y: 0,
-  scrollTrigger: {
-    trigger: ".container-planet",
-    start: "top center", 
-    end: "+=100",
-    toggleActions: "restart pause pause pause",
-    scrub: true,
-  },
-  duration: 1, 
-});
-
-// GSAP NAV
-const $nav = document.querySelector("nav");
-gsap.to($nav, {opacity: 1, x: 0, y: 0})
