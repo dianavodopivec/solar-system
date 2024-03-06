@@ -1,6 +1,8 @@
 import { clockFuncionality } from "./assets/scripts/clock.js";
 import { getGeolocation } from "./assets/scripts/geolocation.js";
 import { addAnimation } from "./assets/scripts/scroller-planet.js";
+import { buttonActions } from "./assets/scripts/btnActions.js";
+
 /*import { earthChanges 
 } from "./assets/scripts/earthChanges.js";*/
 
@@ -8,7 +10,8 @@ import { addAnimation } from "./assets/scripts/scroller-planet.js";
 document.addEventListener("DOMContentLoaded", (e) => {
   clockFuncionality();
   getGeolocation();
-  addAnimation()
+  addAnimation();
+  buttonActions();
   //earthChanges();
 });
 
@@ -155,4 +158,27 @@ gsap.to($planetP, {
   }
 })
 
+//TEST 2
+// Definir períodos orbitales en días para los planetas
+const periodosOrbitales = {
+  mercurio: 87.97,
+  venus: 224.7,
+  tierra: 365.25, // Tomamos 365.25 días para tener en cuenta los años bisiestos
+  marte: 686.97,
+  jupiter: 4332.82,
+  saturno: 10755.7,
+  urano: 30687,
+  neptuno: 60190
+};
 
+// Fecha inicial (5 de marzo de 2024)
+const fechaInicial = new Date('2024-03-05');
+
+// Fecha actual
+const fechaActual = new Date();
+
+// Calcular días transcurridos para cada planeta
+Object.entries(periodosOrbitales).forEach(([planeta, periodoOrbital]) => {
+  const diasTranscurridos = Math.floor((fechaActual - fechaInicial) / (1000 * 60 * 60 * 24 * periodoOrbital));
+  console.log(`Han pasado ${diasTranscurridos} días desde que ${planeta} completó una vuelta.`);
+});
