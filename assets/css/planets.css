@@ -133,7 +133,7 @@
   height: 30px;
   width: 120px;
   position: absolute;
-  bottom: 0;
+  bottom: 100px;
   cursor: pointer;
   border: none;
   background-color: #b87f46;
@@ -142,6 +142,11 @@
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+  transition: bottom 0.1s ease;
+  -webkit-transition: bottom 0.1s ease;
+  -moz-transition: bottom 0.1s ease;
+  -ms-transition: bottom 0.1s ease;
+  -o-transition: bottom 0.1s ease;
 }
 
 .button-disc-more:hover {

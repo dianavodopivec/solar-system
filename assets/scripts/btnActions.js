@@ -3,6 +3,7 @@ const $containerDescription = document.querySelector(".container-description");
 const $info1 = document.querySelector(".info-1");
 const $info2 = document.querySelector(".info-2");
 const $info3 = document.querySelector(".info-3");
+let isButtonMoved = false; 
 
 const buttonActions = () => {
   const showInfo = ($info) => {
@@ -10,7 +11,7 @@ const buttonActions = () => {
     setTimeout(() => {
       $info.style.opacity = "1";
       $info.classList.add("visible");
-    }, 0);
+    }, 300);
   };
 
   const hideInfo = ($info) => {
@@ -28,12 +29,20 @@ const buttonActions = () => {
       hideInfo($info3);
       hideInfo($containerDescription);
       $buttonDM.style.backgroundColor = "";
+      if (isButtonMoved) {
+        $buttonDM.style.bottom = ""; 
+        isButtonMoved = false; 
+      }
     } else {
       showInfo($info1);
       showInfo($info2);
       showInfo($info3);
       showInfo($containerDescription);
       $buttonDM.style.backgroundColor = "#c6997472";
+      if (!isButtonMoved) {
+        $buttonDM.style.bottom = "0";
+        isButtonMoved = true; 
+      }
     }
   });
 };
