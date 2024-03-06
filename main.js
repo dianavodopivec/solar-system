@@ -140,22 +140,21 @@ gsap.to($planetName, {
   ease: "power1.out"
 })
 
-//GSAP INFO-P
-const $planetP = document.querySelector(".info-p");
-gsap.set($planetP, {opacity: 0, x: 0, y: -80})
-gsap.to($planetP, {
+//GSAP INFO
+
+const $planetInfo = document.querySelectorAll(".info-gsap")
+gsap.set($planetInfo, {opacity: 0, x: 0, y: -30})
+gsap.to($planetInfo, {
   opacity: 1,
   x: 0,
   y: 0,
-  duration: 1, 
-  ease: "power1.out",
   scrollTrigger: {
-    trigger: ".info-p",
-    start: "top bottom",
-    end: "+=300",
+    trigger: ".info-gsap",
+    start: "top center", 
+    end: "+=200",
     toggleActions: "restart pause pause pause",
-    scrub: true
-  }
+    scrub: true,
+  },
+  duration: 1, 
+  ease: "power1.out"
 })
-
-

@@ -19,7 +19,7 @@ const buttonActions = () => {
     setTimeout(() => {
       $info.style.display = "none";
       $info.classList.remove("visible");
-    }, 500);
+    }, 300);
   };
 
   $buttonDM.addEventListener("click", (e) => {
