@@ -63,11 +63,45 @@
 }
 
 .info-1 {
-  height: 300px;
-  width: 300px;
-  background-color: #342119;
+  height: 350px;
+  width: 400px;
   position: absolute;
   left: 0;
+}
+
+.info-2 {
+  height: 350px;
+  width: 400px;
+  position: absolute;
+  right: 0px;
+}
+
+
+.data- {
+  font-size: 1.2rem;
+  font-weight: 200;
+  line-height: 1.5rem;
+  list-style: none;
+  color: #727171;
+  margin-bottom: 5px; 
+}
+
+.data-title {
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.5rem;
+  list-style: none;
+  color: #727171;
+  margin-bottom: 10px;
+}
+
+.span-p {
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-style: italic;
+  line-height: 1.5rem;
+  color: #c8c8c8;
+  
 }
 
 .info-p {
