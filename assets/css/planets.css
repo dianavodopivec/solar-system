@@ -60,6 +60,8 @@
   position: absolute;
   bottom: 50px;
   padding: 30px;
+  opacity: 0;
+  display: none;
 }
 
 .info-1 {
@@ -150,6 +152,7 @@
   -ms-transition: 0.4s ease-in-out;
   -o-transition: 0.4s ease-in-out;
 }
+
 
 /* THE SUN */
 
