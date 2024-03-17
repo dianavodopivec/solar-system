@@ -93,13 +93,12 @@ gsap.to($star, {
   opacity: 0,
 });
 
-
 //GSAP PLANETS 
-const $allPlanets = document.querySelector(".card");
+const $firstPlanet = document.querySelector(".card");
 let planetAppeared = false;
 
-gsap.set($allPlanets.children, { opacity: 0, y: -100, rotation: 0 });
-gsap.to($allPlanets.children, {
+gsap.set($firstPlanet.children, { opacity: 0, y: -100, rotation: 0 });
+gsap.to($firstPlanet.children, {
   opacity: 1,
   scrollTrigger: {
     trigger: ".container-planet",
@@ -108,7 +107,7 @@ gsap.to($allPlanets.children, {
     onEnter: () => {
       if (!planetAppeared) {
         planetAppeared = true;
-        gsap.to($allPlanets.children, { opacity: 1, y: 0, rotation: 0 });
+        gsap.to($firstPlanet.children, { opacity: 1, y: 0, rotation: 0 });
       }
     },
     onLeaveBack: () => {
@@ -123,7 +122,7 @@ gsap.to($allPlanets.children, {
 });
 
 //GSAP PLANETS-NAME
-const $planetName = document.querySelectorAll(".planet-name")
+const $planetName = document.querySelector(".planet-name")
 gsap.set($planetName, {opacity: 0, x: 0, y: -35})
 gsap.to($planetName, {
   opacity: 1,
@@ -141,9 +140,8 @@ gsap.to($planetName, {
 })
 
 //GSAP INFO
-
-const $planetInfo = document.querySelectorAll(".info-gsap")
-gsap.set($planetInfo, {opacity: 0, x: 0, y: -30})
+const $planetInfo = document.querySelectorAll(".info-sun")
+gsap.set($planetInfo, {opacity: 0, x: 0, y: -10})
 gsap.to($planetInfo, {
   opacity: 1,
   x: 0,
